@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 body {
-    background-color: #4e0053;
+    background: linear-gradient(45deg, #6a0572, #d4145a);
     color: #fff;
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -9,8 +9,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 100vh;
+    min-height: 2vw;
+    height: 1vh; 
+    transform: scale(1.2); 
     transition: all 0.5s ease-in-out;
+    overflow-x: hidden;
 }
 header {
     background: linear-gradient(45deg, #6a0572, #d4145a);
@@ -19,7 +22,8 @@ header {
     width: 100%;
     border-bottom: 2px solid #fff;
     transition: background 0.5s ease-in-out;
-    position: relative; /* Added for positioning the sparkle */
+    position: relative;
+    transform: scale(1.2); 
 }
 h1 {
     font-size: 3rem;
@@ -32,7 +36,6 @@ h1 {
     display: inline-block;
     position: relative;
     animation: glitter 3s infinite;
-    color: #6a0572;
 }
 h1::before, h1::after {
     content: '';
@@ -41,7 +44,6 @@ h1::before, h1::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     z-index: -1;
     animation: shimmer 2s infinite;
 }
@@ -50,11 +52,9 @@ h1::before, h1::after {
     100% { background-position: 100%; }
 }
 @keyframes glitter {
-    0% { text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff; }
-    50% { text-shadow: 0 0 20px #6a0572, 0 0 40px #6a0572, 0 0 50px #6a0572; }
-    100% { text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff; }
+    0% { text-shadow: 0 0 20px #6a0572, 0 0 40px #6a0572, 0 0 50px #6a0572; }
+    100% { text-shadow: 0 0 20px #6a0572, 0 0 40px #6a0572, 0 0 50px #6a0572; }
 }
-
 .sparkle {
     position: absolute;
     top: 10px; /* Adjust as needed */
@@ -65,12 +65,10 @@ h1::before, h1::after {
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: sparkle-animation 1.5s infinite;
 }
-
 @keyframes sparkle-animation {
     0%, 100% { opacity: 0.8; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.2); }
 }
-
 nav {
     display: flex;
     justify-content: center;
@@ -103,4 +101,14 @@ footer {
     transition: background 0.5s ease-in-out;
     position: absolute;
     bottom: 0;
+}
+
+/* CSS to hide content initially */
+.body-hidden {
+    display: none;
+}
+
+/* CSS to show content after password is entered */
+.body-visible {
+    display: block;
 }

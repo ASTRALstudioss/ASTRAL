@@ -13,7 +13,11 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'i.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/password', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'password.html'));
 });
 
 app.get('/games', (req, res) => {
