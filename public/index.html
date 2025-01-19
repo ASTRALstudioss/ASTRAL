@@ -6,39 +6,26 @@
     <title>Astral - Explore the Universe of Gaming</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<script>
-    const key = "$)%*(&)$%*&)(!&%$)"; // Same random key used for encryption
-
-    function decrypt(data, key) {
-        const decoded = atob(data); // Decode from Base64
-        let decrypted = "";
-        for (let i = 0; i < decoded.length; i++) {
-            decrypted += String.fromCharCode(decoded.charCodeAt(i) ^ key.charCodeAt(i % key.length));
-        }
-        return decrypted;
-    }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const authParam = urlParams.get("auth");
-
-    if (authParam && decrypt(authParam, key) === "accessGranted") {
-        document.body.style.display = "block"; // Show the content
-    } else {
-        window.location.href = "/password"; // Redirect to password page if access not granted
-    }
-</script>
 <body>
     <header>
         <h1>Astral</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">yxorp</a>
-            <a href="#">Contact</a>
+            <a href="/">Home</a>
+            <a href="/apps">Apps</a>
         </nav>
     </header>
     <main>
-        <description>Hello!</description>
-        <description>This is a demo, this is not the finished product, and also if you aren't a dev, stop spying</description>
+        <center><form id="uv-form">
+           <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"> 
+           <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input">
+         </form></center>
+        <div id="uv-error"></div>
+        <div id="uv-error-code"></div>
+     </div>
+     <script src="/vn/uv.bundle.js" defer=""></script>
+     <script src="/vn/uv.config.js" defer=""></script>
+     <script src="/vn/register-sw.js" defer=""></script>
+     <script src="/vn/search.js" defer=""></script>
+     <script src="/vn/index.js" defer=""></script>
     </main>
 </body>

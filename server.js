@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import axios from 'axios';
 import { fileURLToPath } from 'url';
 
 const app = express();
@@ -20,8 +19,8 @@ app.get('/password', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'password.html'));
 });
 
-app.get('/games', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'games.html'));
+app.get('/apps', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'apps.html'));
 });
 
 app.get('/404', (req, res) => {
